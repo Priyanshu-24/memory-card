@@ -74,11 +74,10 @@ function Main({check, score, highScore}) {
     const [dog, setDog] = useState(dogs);
 
     useEffect(() => {
-        
-        let newDog = [...dog];
-        newDog.sort( ()=>Math.random()-0.5 );
-        setDog(newDog);
-    }, [score, highScore])
+
+      setDog((d) => d.sort(() => Math.random() - 0.5));
+      
+    }, [score, highScore]);
 
     return (
         
